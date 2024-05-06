@@ -1,0 +1,21 @@
+dist:
+  name: otel-profiling-col
+  description: Profiling OTel Collector distribution
+  output_path: ./otel-profiling-col
+  otelcol_version: 0.99.0
+
+exporters:
+  - gomod:
+      # NOTE: Prior to v0.86.0 use the `loggingexporter` instead of `debugexporter`.
+      go.opentelemetry.io/collector/exporter/debugexporter v0.99.0
+  - gomod:
+      go.opentelemetry.io/collector/exporter/otlpexporter v0.99.0
+
+processors:
+  - gomod:
+      go.opentelemetry.io/collector/processor/batchprocessor v0.99.0
+
+receivers:
+  - gomod:
+      go.opentelemetry.io/collector/receiver/otlpreceiver v0.99.0
+
